@@ -3,7 +3,7 @@
 {% block content %}
 
     <center>
-        <h1>Blogz!</h1>
+        <h1>Build a Blog!</h1>
     </center>
     
 
@@ -17,7 +17,7 @@
 
         {% for post in posts %}
             <h2><a href="/blog?id={{post.id}}">{{post.title}}</a></h2>
-            <h2>Written by:<a href="/blog?user={{post.owner.id}}">{{post.owner.username}}</a></h2>
+            <!-- <h2>Written by:<a href="/blog?user={{post.owner.id}}">{{post.owner.username}}</a></h2> -->
             <p>{{post.body}}</p>
             <hr />
         {% endfor %}

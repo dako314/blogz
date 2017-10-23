@@ -1,21 +1,100 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
     <head>
-        <title>{{title}}</title>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
         <style>
-            .error {
-                color: red;
-            }
-        
+        .error
+        {
+            color: red;
+            font-style: italic;
+        }
+        #Header
+        {
+          background-color: #430946;
+          height: 100px;
+          width: 100%;
+        }
+        #headertext
+        {
+          width: 400px;
+          height: 200px;
+          float: left;
+          color:#FDFAFA;
+        }
+        .container
+        {
+        width: 960px;
+        height: auto;
+        margin: 0 auto;
+        }
+        #navArea
+        {
+        height: 100px;
+        float: right;
+        display: inline;
+        }
+        #navArea li
+        {
+        list-style-type: none !important;
+        }
+        #nav a
+        {
+        color: white;
+        text-decoration: none;
+        margin-top: 30px;
+        }
+        #nav li
+        {
+        float: left;
+        margin-left: 30px;
+        background-color: #1157DA;
+        padding: 10px;
+        border: 1px solid silver;
+        border-radius: 5px;
+        }
+        #nav li:hover
+        {
+        background-color: grey;
+        }
+        body
+        {
+            font-family: arial;
+            background-color: rgba(128, 126, 18, 0.733);
+            
+        }
+        #content
+        {
+          display: table;
+        }
         </style>
     </head>
-<body>
-    <div>
-        <a href='/blog'> Main Blog Page</a> <a href='/new-post'>Add a Blog Entry</a>
-    </div>
+    
+    <body>
+            <div>
+                <a href='/login'>Log In</a>
+                <a href='/signup'>Sign Up</a>
+                <a href='/logout'>Log Out</a>
+            </div>
 
-    {% block content %}
-    {% endblock %}
+        <header>
+            <a href='/'>Blogger List</a>
+            <a href='/newpost'>New Blog</a>
+            <a href='/blog'>Home</a>
+        </header>
+            
+            {% with messages = get_flashed_messages() %}
+                <ul>
+                {% for message in messages %}
+                    <li>{{message}}</li>    
+                {% endfor %}
+                </ul>
+            {% endwith %} -->
 
-</body>
+        <main>
+            {% block content %}
+            {% endblock %} 
+        </main>
+    </body>
 </html>
